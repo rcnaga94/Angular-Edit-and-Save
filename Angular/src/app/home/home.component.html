@@ -1,0 +1,53 @@
+{{name}}
+<table>
+  <tr>
+    <td>Name</td>
+    <td>
+      <input name='Name' [(ngModel)]="Student.Name" />
+    </td>
+  </tr>
+  <tr>
+    <td>Sure</td>
+    <td>
+      <input name='Sure' [(ngModel)]="Student.Sure" />
+    </td>
+  </tr>
+  <tr>
+    <td>Mobile</td>
+    <td>
+      <input name='Mark' [(ngModel)]="Student.Mark" />
+    </td>
+  </tr>
+  <tr>
+    <td>Address</td>
+    <td>
+      <input name='Address' [(ngModel)]="Student.Address" />
+    </td>
+  </tr>
+</table>
+<button (click)='SaveRecord()'>Saved</button>
+<hr/>
+<table>
+  <tr>
+    <th>Record No</th>
+    <th>Name</th>
+    <th>Sure</th>
+    <th>M</th>
+    <th>Address</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <tr *ngFor='let item of StudentList;let i = index'>
+  <td>{{i}}</td>
+  <td>{{item.Name}}</td>
+  <td>{{item.Sure}}</td>
+  <td>{{item.Mark}}</td>
+  <td>{{item.Address}}</td>
+  <td>
+    <button (click)='EditRecord(i)'>Edit</button>
+  </td>
+  <td>
+    <button (click)='DeleteRecord(i)'>Delete</button>
+  </td>
+  </tr>
+</table>
